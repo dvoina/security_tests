@@ -1,9 +1,14 @@
 version: "3.7"
 services: 
-    web:
+    nginx:
         image: "nginx:alpine"
         ports:
             - 80:80
         volumes:
             - ./files:/usr/share/nginx/html
-
+    apache:
+        image: "httpd:alpine"
+        ports:
+            - 81:80
+        volumes:
+            - ./files:/usr/local/apache2/htdocs/
